@@ -1,0 +1,21 @@
+{% extends "posts/layout.html"%}
+
+{% block title%} Add Post{% endblock %}
+
+
+{% block body%}
+
+<main>
+    <div class="formcontainer">
+        <form class="form-content" method="post"  enctype="multipart/form-data">
+            {%csrf_token%}
+            
+            <span>Image</span><input type="file" name="myfile" class="title" >
+           
+            <span>Title</span><input type="text" placeholder="Title" name="title" class="title">
+            <span>Description</span><input type="text" placeholder="Description" name="description" class="description">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</main>
+{% endblock%}

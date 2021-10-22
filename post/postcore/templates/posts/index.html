@@ -1,0 +1,27 @@
+{% extends "posts/layout.html"%}
+
+{% block title%} Home{% endblock %}
+
+
+{% block body%}
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="{% url 'add'%}" class="abtn">Add Post</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="postcontainer">
+            <div class="post-content">
+                {% for i in all%}
+                {% if i.image %}
+                <img src="{{i.image.url}}" alt="">
+                {% endif %}
+                <span>Title</span><div>{{i.title}}</div>
+                <span>Description</span><div>{{i.description}}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+{% endblock%}
